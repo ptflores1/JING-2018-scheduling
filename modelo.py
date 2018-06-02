@@ -79,7 +79,7 @@ print("Todos los eventos ocurren una sola vez")
 for e in eventos:
     model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
                                       for t in range(1, T_d[d] + 1)
-                                      for k in canchas) == 1,
+                                      for k in canchas) == 2,
                     "El evento {} ocurre una vez".format(e))
 model.update()
 
@@ -89,7 +89,7 @@ for d in dias:
     for t in range(1, T_d[d] + 1):
         for k in canchas:
             model.addConstr(
-                gurobipy.quicksum(y[t, e, k, d] for e in eventos) <= 1)
+                gurobipy.quicksum(y[t, e, k, d] for e in eventos) <= 2)
 model.update()
 
 
@@ -99,7 +99,7 @@ for e in eventos:
     for k in canchas:
         model.addConstr(
           gurobipy.quicksum(
-              x[t, e, k, d] for t in range(1, T_d[d] + 1) for d in dias) <= f_e_k[e, k],
+              x[t, e, k, d] for t in range(1, T_d[d] + 1) for d in dias) <= 2*f_e_k[e, k],
             "Compatibilidad entre evento {} y cancha {}".format(e, k))
 model.update()
 
@@ -193,11 +193,11 @@ model.setObjective(gamma, gurobipy.GRB.MINIMIZE)
 
 print("Optimizando")
 model.optimize()
-model.write("solucion.sol")
+#model.write("solucion.sol")
 model.printAttr("X")
 
 
-create_calendar(y, dias, eventos, T_d)
+#create_calendar(y, dias, eventos, T_d)
 
 
 
