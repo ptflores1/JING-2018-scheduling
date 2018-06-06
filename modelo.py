@@ -7,7 +7,7 @@ instancias = {1: "instancia", # 10 Eventos de futbol
               3: "instancia3.0", # Todos los eventos
               4: "instancia 4" # Todos los eventos en bloques de 5 min
               }
-instancia = instancias[2]
+instancia = instancias[3]
 
 PATH_EVENTOS = f"{instancia}/eventos.csv"
 PATH_DIAS = f"{instancia}/dias.csv"
@@ -23,7 +23,6 @@ deportes = reader.deportes(PATH_FACTIBILIDAD)
 dias, T_d = reader.dias(PATH_DIAS)
 canchas = reader.canchas(PATH_FACTIBILIDAD)
 eventos = reader.eventos(PATH_EVENTOS)
-print(eventos)
 
 
 # Parametros

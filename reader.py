@@ -97,6 +97,7 @@ def params_eventos(path_eventos):
     :param path: Ruta al archivo csv donde se guarda la informacion de cada evento
     :return:
     """
+
     with open(path_eventos, "r", encoding="UTF-8") as file:
         data = csv.DictReader(file, skipinitialspace=True, delimiter=";")
         data = list(data)
