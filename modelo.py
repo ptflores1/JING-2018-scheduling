@@ -3,7 +3,7 @@ import reader
 import collections
 
 instancias = {1 : "instancia", 2: "instancia2",3:"instancia3.0",4:'instancia 4'}
-instancia = instancias[1]
+instancia = instancias[2]
 
 PATH_EVENTOS = f"{instancia}/eventos.csv"
 PATH_DIAS = f"{instancia}/dias.csv"
@@ -72,7 +72,7 @@ print("Todos los eventos ocurren una sola vez")
 for e in eventos:
     model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
                                       for t in range(1, T_d[d] + 1)
-                                      for k in canchas if f_e_k[e, k]==1) == 1,
+                                      for k in canchas if f_e_k[e, k] == 1) == 1,
                     "El evento {} ocurre una vez".format(e))
 model.update()
 
@@ -122,9 +122,8 @@ for e in eventos:
     for k in canchas:
         if f_e_k[e, k]==1:
             for d in dias:
-                for t in range(1, T_d[d] + 1):
-                    if t >= T_d[d]-t_e[e]+2:
-                        model.addConstr(x[t,e,k,d]==0)
+                for t in range(T_d[d]-t_e[e]+2, T_d[d] + 1):
+                    model.addConstr(x[t,e,k,d]==0)
 model.update()
 
 #print("Eventos de natación no pueden quedar el mismo día")
@@ -133,10 +132,10 @@ model.update()
 
 print("Las finales atractivas deben quedar para el último dia")
 for e in epsilon_f:
-    for t in range(1, T_d[d] + 1):
-        for d in range(1,3):
+    for d in range(1, 3):
+        for t in range(1, T_d[d] + 1):
             for k in canchas:
-                if f_e_k[e, k]==1:
+                if f_e_k[e, k] == 1:
                     model.addConstr(x[t,e,k,d]==0)
 model.update()
 
