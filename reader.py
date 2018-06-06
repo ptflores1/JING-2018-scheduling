@@ -109,6 +109,7 @@ def params_eventos(path_eventos):
 
         return  veces, jerarquia, atractivo, deporte, duracion
 
+
 def param_beta(base_path):
     """
     Retorna un diccionarion con los parametros correspondientes a beta
@@ -144,20 +145,41 @@ def epsilon_s(deportes, eventos_deportes):
 def epsilon_f(atractivos):
     return [e for e, a in atractivos.items() if a == 1]
 
-def epsilon_n():
-    pass
+
+def jerarquia_eventos(path_eventos):
+    with open(path_eventos, "r", encoding="UTF-8") as file:
+        data = csv.DictReader(file, skipinitialspace=True, delimiter=";")
+        res = defaultdict(lambda : defaultdict(list))
+        for d in data:
+            res[d["deporte"]][d["jerarquia"]].append(d["evento"])
+
+        dependencias = {}
+        for value in res.values():
+            jerarquias = list(sorted(((jerarquia, eventos) for jerarquia, eventos in value.items())))
+            for i, value in enumerate(jerarquias):
+                jerarquia, eventos = value
+                for evento in eventos:
+                    try:
+                        dependencias[evento] = jerarquias[i+1][1]
+                    except IndexError:
+                        pass
+
+    return dependencias
 
 
 
 if __name__ == "__main__":
+    from pprint import pprint
     #*_, eventos_deporte = params_eventos("instancia/eventos.csv")
     #deportes = deportes("instancia/factibilidad cancha-deporte.csv")
     # print(eventos("instancia/eventos.csv"))
     # print(dias("instancia/dias.csv"))
     # print(canchas("instancia/factibilidad cancha-deporte.csv"))
     # print(param_beta("instancia/beta"))
-    print(factibilidad_canchas_evento("instancia/eventos.csv", "instancia/factibilidad cancha-deporte.csv"))
+    #print(factibilidad_canchas_evento("instancia/eventos.csv", "instancia/factibilidad cancha-deporte.csv"))
     #print(epsilon_s(deportes, eventos_deporte))
 
     #evento_veces, evento_jerarquia, evento_atractivo, eventos_deporte, duracion = params_eventos("instancia/eventos.csv")
     #print(duracion)
+
+    pprint(jerarquia_eventos("instancia3.0/eventos.csv"))

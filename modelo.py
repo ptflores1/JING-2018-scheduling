@@ -40,6 +40,7 @@ epsilon_f = reader.epsilon_f(evento_atractivo)
 delta_s_i = collections.defaultdict(list)
 for evento, jerarquia in phi_e.items():
     delta_s_i[eventos_deporte[evento], jerarquia].append(evento)
+eta_e = reader.jerarquia_eventos(PATH_EVENTOS)
 
 
 
@@ -123,6 +124,7 @@ model.update()
 # print("Respetar la jerarquía de eventos")
 # for d in dias:
 #     for e in eventos:
+#
 
 
 
