@@ -2,7 +2,11 @@ import gurobipy
 import reader
 import collections
 
-instancias = {1 : "instancia", 2: "instancia2",3:"instancia3.0",4:'instancia 4'}
+instancias = {1: "instancia", # 10 Eventos de futbol
+              2: "instancia2", # Un evento de cada tipo
+              3: "instancia3.0", # Todos los eventos
+              4: "instancia 4" # Todos los eventos en bloques de 5 min
+              }
 instancia = instancias[2]
 
 PATH_EVENTOS = f"{instancia}/eventos.csv"
@@ -117,6 +121,12 @@ model.update()
 # model.update()
 
 
+# print("Respetar la jerarquía de eventos")
+# for d in dias:
+#     for e in eventos:
+
+
+
 print("Respetar hora de termino Cataldo edition")
 for e in eventos:
     for k in canchas:
@@ -127,6 +137,7 @@ for e in eventos:
 model.update()
 
 #print("Eventos de natación no pueden quedar el mismo día")
+
 
 #print('No pueden topar las finales atractivas')
 
@@ -143,15 +154,15 @@ model.update()
 
 model.update()
 
-# print("Disponibilidad de cancha")
-# for d in dias:
-#     for t in range(1, T_d[d] + 1):
-#         for k in canchas:
-#             model.addConstr(beta_t_k_d[t, k, d] >= gurobipy.quicksum(
-#                 y[t, e, k, d] for e in eventos),
-#                             "No se puedeocupar la cancha {} el dia {} en el "
-#                             "periodo {} si esta no está disponible".format(k, d, t))
-#
+print("Disponibilidad de cancha")
+for d in dias:
+    for t in range(1, T_d[d] + 1):
+        for k in canchas:
+            model.addConstr(beta_t_k_d[t, k, d] >= gurobipy.quicksum(
+                y[t, e, k, d] for e in eventos),
+                            "No se puedeocupar la cancha {} el dia {} en el "
+                            "periodo {} si esta no está disponible".format(k, d, t))
+
 
 
 
