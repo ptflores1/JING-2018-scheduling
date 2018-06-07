@@ -79,9 +79,37 @@ for e in eventos:
                                       for t in range(1, T_d[d] + 1)
                                       for k in canchas if f_e_k[e, k] == 1) == 1,
                     "El evento {} ocurre una vez".format(e))
+
+    # model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
+    #                                   for t in range(1, T_d[d] + 1)
+    #                                   for k in canchas) <= 1,
+    #                 "El evento {} ocurre una vez".format(e))
+
+    model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
+                                      for t in range(1, T_d[d] + 1)
+                                      for k in canchas if f_e_k[e, k] == 0) == 0,
+                    "El evento {} ocurre una vez".format(e))
 model.update()
 
+# print("Todos los eventos ocurren una sola vez sin meter factibilidad")
+# for e in eventos:
+#     model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
+#                                       for t in range(1, T_d[d] + 1)
+#                                       for k in canchas) == 1,
+#                     "El evento {} ocurre una vez".format(e))
+#
+# model.update()
 
+# print("Factibilidad de canchas")
+# for e in eventos:
+#     for k in canchas:
+#         model.addConstr(
+#             gurobipy.quicksum(x[t, e, k, d] for d in dias for t in range(1, T_d[d]+1)) <=
+#             f_e_k[e, k],
+#             "Compatibilidad entre evento {} y cancha {}".format(e, k))
+
+
+model.update()
 print("Sólo se juega un evento a la vez en cada cancha")
 for d in dias:
     for t in range(1, T_d[d] + 1):
@@ -100,36 +128,15 @@ for d in dias:
                         "topes de horario en el bloque con más topes de horario")
 model.update()
 
-# print("Respetar la jerarquía de eventos")
-# for d in dias: # 3
-#     for r in range(1, T_d[d] + 1): # 120
-#         for t in range(r, T_d[d] + 1): #  <120
-#             for k in canchas: # 10
-#                 for s in deportes: #26
-#                     for e in epsilon_s[s]: # 4
-#                         for j in epsilon_s[s]: # 4
-#                             if phi_e[e] >= phi_e[j]:
-#                                 model.addConstr(
-#                                     x[t, e, k, d] >= x[r, j, k, d],
-#                                     "evento de mayor jerarquía {}"
-#                                     "ocurre en tiempo {} antes que el evento {} que ocurre en tiempo {} el dia"
-#                                     "{} en la cancha {}".format(e,
-#                                                                 t,
-#                                                                 j,
-#                                                                 r,
-#                                                                 d,
-#                                                                 k))
-# model.update()
-
 
 print("Respetar la jerarquía de eventos")
-for d in dias:
-    for e in eventos:
-        if len(eta_e[e]) > 0:
+for e in eventos:
+    if len(eta_e[e]) > 0:  # evalua si hay eventos de jerarquia mayor que el evento e
+        for d in dias:
             for t in range(1, T_d[d]+1):
                 model.addConstr(gurobipy.quicksum(x[t, e, k, d] for k in canchas)<=
-                                (gurobipy.quicksum(y[r, e2, k2, d] for e2 in eta_e[e] for k2 in canchas for r in range(1, t)) +
-                                 gurobipy.quicksum(y[r, e2, k2, d] for c in range(1, d) for e2 in eta_e[e] for r in range(1, T_d[d]+1) for k2 in canchas))
+                                (gurobipy.quicksum(y[r, e2, k2, d] for k2 in canchas for e2 in eta_e[e]  for r in range(1, t)) +
+                                 gurobipy.quicksum(y[r, e2, k2, c] for k2 in canchas for c in range(1, d) for e2 in eta_e[e] for r in range(1, T_d[d]+1)))
                                 /(len(eta_e[e]*t_e[e])))
 
 
@@ -147,7 +154,10 @@ model.update()
 #print("Eventos de natación no pueden quedar el mismo día")
 
 
-#print('No pueden topar las finales atractivas')
+print('No pueden topar las finales atractivas')
+for t in range(1, T_d[3]+1):
+    model.addConstr(gurobipy.quicksum(y[t, e, k, 3] for k in canchas for e in epsilon_f) <= 1)
+
 
 print("Las finales atractivas deben quedar para el último dia")
 for e in epsilon_f:
