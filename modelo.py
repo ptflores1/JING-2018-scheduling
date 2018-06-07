@@ -7,7 +7,7 @@ instancias = {1: "instancia", # 10 Eventos de futbol
               3: "instancia3.0", # Todos los eventos
               4: "instancia 4" # Todos los eventos en bloques de 5 min
               }
-instancia = instancias[3]
+instancia = instancias[1]
 
 PATH_EVENTOS = f"{instancia}/eventos.csv"
 PATH_DIAS = f"{instancia}/dias.csv"
@@ -41,6 +41,7 @@ delta_s_i = collections.defaultdict(list)
 for evento, jerarquia in phi_e.items():
     delta_s_i[eventos_deporte[evento], jerarquia].append(evento)
 eta_e = reader.jerarquia_eventos(PATH_EVENTOS)
+print(eta_e)
 
 
 
@@ -121,10 +122,16 @@ model.update()
 # model.update()
 
 
-# print("Respetar la jerarquía de eventos")
-# for d in dias:
-#     for e in eventos:
-#
+print("Respetar la jerarquía de eventos")
+for d in dias:
+    for e in eventos:
+        if len(eta_e[e]) > 0:
+            for t in range(1, T_d[d]+1):
+                model.addConstr(gurobipy.quicksum(x[t, e, k, d] for k in canchas)<=
+                                (gurobipy.quicksum(y[r, e2, k2, d] for e2 in eta_e[e] for k2 in canchas for r in range(1, t)) +
+                                 gurobipy.quicksum(y[r, e2, k2, d] for c in range(1, d) for e2 in eta_e[e] for r in range(1, T_d[d]+1) for k2 in canchas))
+                                /(len(eta_e[e]*t_e[e])))
+
 
 
 
