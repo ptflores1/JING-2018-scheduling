@@ -162,7 +162,7 @@ def jerarquia_eventos(path_eventos):
                     try:
                         dependencias[evento] = jerarquias[i+1][1]
                     except IndexError:
-                        pass
+                        dependencias[evento] = []
 
     return dependencias
 
