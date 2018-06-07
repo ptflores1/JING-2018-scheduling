@@ -1,6 +1,7 @@
 import gurobipy
 import reader
 import collections
+import calendario.calendar as calendar
 
 instancias = {1: "instancia", # 10 Eventos de futbol
               2: "instancia2", # Un evento de cada tipo
@@ -189,6 +190,11 @@ print("Optimizando csm depresion incoming")
 model.optimize()
 model.write("solucion.sol")
 model.printAttr("X")
+
+# CREACION DEL CALENDARIO
+colores = calendar.event_colors_by_sport(deportes, eventos_deporte)
+calendar.by_event(y, dias, eventos, T_d)
+calendar.by_field(y, dias, canchas, T_d, colores)
 
 
 
