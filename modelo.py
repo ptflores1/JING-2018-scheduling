@@ -6,9 +6,11 @@ import calendario.calendar as calendar
 instancias = {1: "instancia", # 10 Eventos de futbol
               2: "instancia2", # Un evento de cada tipo
               3: "instancia3.0", # Todos los eventos
-              4: "instancia 4" # Todos los eventos en bloques de 5 min
+              4: "instancia 4", # Todos los eventos en bloques de 5 min
+              5: "instancia 5", # futbol 11 - tenis - natacion
+              6: "instancia 6"
               }
-instancia = instancias[1]
+instancia = instancias[6]
 
 PATH_EVENTOS = f"{instancia}/eventos.csv"
 PATH_DIAS = f"{instancia}/dias.csv"
@@ -42,7 +44,6 @@ delta_s_i = collections.defaultdict(list)
 for evento, jerarquia in phi_e.items():
     delta_s_i[eventos_deporte[evento], jerarquia].append(evento)
 eta_e = reader.jerarquia_eventos(PATH_EVENTOS)
-print(eta_e)
 
 
 
@@ -135,7 +136,8 @@ print("Eventos de natación no pueden quedar el mismo día")
 for d in dias:
     for e in epsilon_n:
         for j in epsilon_n:
-            model.addConstr(gurobipy.quicksum(x[t, e, k, d] + x[t, j, k, d] for t in range(1, T_d[d]+1) for k in canchas ) <= 1)
+            if e != j:
+                model.addConstr(gurobipy.quicksum(x[t, e, k, d] + x[t, j, k, d] for t in range(1, T_d[d]+1) for k in canchas ) <= 1)
 
 
 
@@ -146,11 +148,7 @@ for t in range(1, T_d[3]+1):
 
 print("Las finales atractivas deben quedar para el último dia")
 for e in epsilon_f:
-    for d in range(1, 3):
-        for t in range(1, T_d[d] + 1):
-            for k in canchas:
-                if f_e_k[e, k] == 1:
-                    model.addConstr(x[t,e,k,d]==0)
+        model.addConstr(gurobipy.quicksum(x[t,e,k,3] for k in canchas for t in range(1, T_d[3]+1 )) == 1)
 model.update()
 
 
