@@ -80,33 +80,12 @@ for e in eventos:
                                       for k in canchas if f_e_k[e, k] == 1) == 1,
                     "El evento {} ocurre una vez".format(e))
 
-    # model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
-    #                                   for t in range(1, T_d[d] + 1)
-    #                                   for k in canchas) <= 1,
-    #                 "El evento {} ocurre una vez".format(e))
-
     model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
                                       for t in range(1, T_d[d] + 1)
                                       for k in canchas if f_e_k[e, k] == 0) == 0,
                     "El evento {} ocurre una vez".format(e))
 model.update()
 
-# print("Todos los eventos ocurren una sola vez sin meter factibilidad")
-# for e in eventos:
-#     model.addConstr(gurobipy.quicksum(x[t, e, k, d] for d in dias
-#                                       for t in range(1, T_d[d] + 1)
-#                                       for k in canchas) == 1,
-#                     "El evento {} ocurre una vez".format(e))
-#
-# model.update()
-
-# print("Factibilidad de canchas")
-# for e in eventos:
-#     for k in canchas:
-#         model.addConstr(
-#             gurobipy.quicksum(x[t, e, k, d] for d in dias for t in range(1, T_d[d]+1)) <=
-#             f_e_k[e, k],
-#             "Compatibilidad entre evento {} y cancha {}".format(e, k))
 
 
 model.update()
@@ -151,7 +130,12 @@ for e in eventos:
                     model.addConstr(x[t,e,k,d]==0)
 model.update()
 
-#print("Eventos de natación no pueden quedar el mismo día")
+print("Eventos de natación no pueden quedar el mismo día")
+for d in dias:
+    for e in epsilon_n:
+        for j in epsilon_n:
+            model.addConstr(gurobipy.quicksum(x[t, e, k, d] + x[t, j, k, d] for t in range(1, T_d[d]+1) for k in canchas ) <= 1)
+
 
 
 print('No pueden topar las finales atractivas')
