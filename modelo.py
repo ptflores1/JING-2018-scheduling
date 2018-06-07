@@ -193,8 +193,8 @@ model.printAttr("X")
 
 # CREACION DEL CALENDARIO
 colores = calendar.event_colors_by_sport(deportes, eventos_deporte)
-calendar.by_event(y, dias, eventos, T_d)
-calendar.by_field(y, dias, canchas, T_d, colores)
+calendar.by_event(y, dias, eventos, T_d, instancia)
+calendar.by_field(y, dias, canchas, T_d, colores, instancia)
 
 
 
