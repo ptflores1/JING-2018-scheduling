@@ -1,0 +1,246 @@
+evento; veces que se juega;jerarquia;deporte atractivo;deporte;duracion
+FUT11 grupo1;1;3;0;futbol 11;6
+FUT11 grupo2;1;3;0;futbol 11;6
+FUT11 grupo3;1;3;0;futbol 11;6
+FUT11 grupo4;1;3;0;futbol 11;6
+FUT11 grupo5;1;3;0;futbol 11;6
+FUT11 grupo6;1;3;0;futbol 11;6
+FUT11 grupo7;1;3;0;futbol 11;6
+FUT11 grupo8;1;3;0;futbol 11;6
+FUT11 grupo9;1;3;0;futbol 11;6
+FUT11 grupo10;1;3;0;futbol 11;6
+FUT11 grupo11;1;3;0;futbol 11;6
+FUT11 grupo12;1;3;0;futbol 11;6
+FUT11 3-4;1;2;0;futbol 11;6
+FUT11 F;1;1;1;futbol 11;6
+FUT7 grupo1 ;1;3;0;futbolito;5
+FUT7 grupo2;1;3;0;futbolito;5
+FUT7 grupo3;1;3;0;futbolito;5
+FUT7 grupo4;1;3;0;futbolito;5
+FUT7 grupo5;1;3;0;futbolito;5
+FUT7 grupo6;1;3;0;futbolito;5
+FUT7 grupo7 ;1;3;0;futbolito;5
+FUT7 grupo8 ;1;3;0;futbolito;5
+FUT7 grupo9 ;1;3;0;futbolito;5
+FUT7 grupo10 ;1;3;0;futbolito;5
+FUT7 grupo11 ;1;3;0;futbolito;5
+FUT7 grupo12;1;3;0;futbolito;5
+FUT7 3-4;1;2;0;futbolito;5
+FUT7 F;1;1;0;futbolito;5
+BSK-D grupo1;1;3;0;basquetball damas;4
+BSK-D grupo2;1;3;0;basquetball damas;4
+BSK-D grupo3;1;3;0;basquetball damas;4
+BSK-D grupo4;1;3;0;basquetball damas;4
+BSK-D grupo5;1;3;0;basquetball damas;4
+BSK-D grupo6;1;3;0;basquetball damas;4
+BSK-D grupo7;1;3;0;basquetball damas;4
+BSK-D grupo8;1;3;0;basquetball damas;4
+BSK-D grupo9;1;3;0;basquetball damas;4
+BSK-D grupo10;1;3;0;basquetball damas;4
+BSK-D grupo11;1;3;0;basquetball damas;4
+BSK-D grupo12;1;3;0;basquetball damas;4
+BSK-D 3-4;1;2;0;basquetball damas;4
+BSK-D F;1;1;0;basquetball damas;4
+BSK-V grupo1;1;3;0;basquetball varones;4
+BSK-V grupo2;1;3;0;basquetball varones;4
+BSK-V grupo3;1;3;0;basquetball varones;4
+BSK-V grupo4;1;3;0;basquetball varones;4
+BSK-V grupo5;1;3;0;basquetball varones;4
+BSK-V grupo6;1;3;0;basquetball varones;4
+BSK-V grupo7;1;3;0;basquetball varones;4
+BSK-V grupo8;1;3;0;basquetball varones;4
+BSK-V grupo9;1;3;0;basquetball varones;4
+BSK-V grupo10;1;3;0;basquetball varones;4
+BSK-V grupo11;1;3;0;basquetball varones;4
+BSK-V grupo12;1;3;0;basquetball varones;4
+BSK-V 3-4;1;2;0;basquetball varones;4
+BSK-V F;1;1;0;basquetball varones;4
+VOL-V grupo1;1;3;0;voleyball varones;3
+VOL-V grupo2;1;3;0;voleyball varones;3
+VOL-V grupo3;1;3;0;voleyball varones;3
+VOL-V grupo4;1;3;0;voleyball varones;3
+VOL-V grupo5;1;3;0;voleyball varones;3
+VOL-V grupo6;1;3;0;voleyball varones;3
+VOL-V grupo7;1;3;0;voleyball varones;3
+VOL-V grupo8;1;3;0;voleyball varones;3
+VOL-V grupo9;1;3;0;voleyball varones;3
+VOL-V grupo10;1;3;0;voleyball varones;3
+VOL-V grupo11;1;3;0;voleyball varones;3
+VOL-V grupo12;1;3;0;voleyball varones;3
+VOL-V 3-4;1;2;0;voleyball varones;3
+VOL-V F;1;1;0;voleyball varones;3
+VOL-D grupo1;1;3;0;voleyball damas;3
+VOL-D grupo2;1;3;0;voleyball damas;3
+VOL-D grupo3;1;3;0;voleyball damas;3
+VOL-D grupo4;1;3;0;voleyball damas;3
+VOL-D grupo5;1;3;0;voleyball damas;3
+VOL-D grupo6;1;3;0;voleyball damas;3
+VOL-D grupo7;1;3;0;voleyball damas;3
+VOL-D grupo8;1;3;0;voleyball damas;3
+VOL-D grupo9;1;3;0;voleyball damas;3
+VOL-D grupo10;1;3;0;voleyball damas;3
+VOL-D grupo11;1;3;0;voleyball damas;3
+VOL-D grupo12;1;3;0;voleyball damas;3
+VOL-D 3-4;1;2;0;voleyball damas;3
+VOL-D F;1;1;1;voleyball damas;3
+TEN 4tos1;1;4;0;tenis;8
+TEN 4tos2;1;4;0;tenis;8
+TEN 4tos3;1;4;0;tenis;8
+TEN 4tos4;1;4;0;tenis;8
+TEN semi1;1;3;0;tenis;8
+TEN semi2;1;3;0;tenis;8
+TEN 3-4;1;2;0;tenis;8
+TEN F;1;1;1;tenis;8
+C5K;1;1;0;corrida;8
+TMESA-V grupo1;1;3;0;tenis de mesa;2
+TMESA-V grupo2;1;3;0;tenis de mesa;2
+TMESA-V grupo3;1;3;0;tenis de mesa;2
+TMESA-V grupo4;1;3;0;tenis de mesa;2
+TMESA-V grupo5;1;3;0;tenis de mesa;2
+TMESA-V grupo6;1;3;0;tenis de mesa;2
+TMESA-V 3-4;1;2;0;tenis de mesa;2
+TMESA-V F;1;1;0;tenis de mesa;2
+TMESA-D grupo1;1;3;0;tenis de mesa;2
+TMESA-D grupo2;1;3;0;tenis de mesa;2
+TMESA-D grupo3;1;3;0;tenis de mesa;2
+TMESA-D grupo4;1;3;0;tenis de mesa;2
+TMESA-D grupo5;1;3;0;tenis de mesa;2
+TMESA-D grupo6;1;3;0;tenis de mesa;2
+TMESA-D 3-4;1;2;0;tenis de mesa;2
+TMESA-D F;1;1;0;tenis de mesa;2
+TMESA-MIX grupo1;1;3;0;tenis de mesa;2
+TMESA-MIX grupo2;1;3;0;tenis de mesa;2
+TMESA-MIX grupo3;1;3;0;tenis de mesa;2
+TMESA-MIX 3-4;1;2;0;tenis de mesa;2
+TMESA-MIX F;1;1;0;tenis de mesa;2
+NAT1;1;1;0;natacion;8
+NAT2;1;1;0;natacion;8
+RGB7 grupo1;1;3;0;rugby;2
+RGB7 grupo2;1;3;0;rugby;2
+RGB7 grupo3;1;3;0;rugby;2
+RGB7 grupo4;1;3;0;rugby;2
+RGB7 grupo5;1;3;0;rugby;2
+RGB7 grupo6;1;3;0;rugby;2
+RGB7 grupo7;1;3;0;rugby;2
+RGB7 grupo8;1;3;0;rugby;2
+RGB7 grupo9;1;3;0;rugby;2
+RGB7 grupo10;1;3;0;rugby;2
+RGB7 grupo11;1;3;0;rugby;2
+RGB7 grupo12;1;3;0;rugby;2
+RGB7 3-4;1;2;0;rugby;2
+RGB7 final;1;1;0;rugby;2
+AJDZ grupo1;1;4;0;ajedrez;2
+AJDZ grupo2;1;4;0;ajedrez;2
+AJDZ grupo3;1;4;0;ajedrez;2
+AJDZ grupo4;1;4;0;ajedrez;2
+AJDZ grupo5;1;4;0;ajedrez;2
+AJDZ grupo6;1;4;0;ajedrez;2
+AJDZ semi1;1;3;0;ajedrez;2
+AJDZ semi2;1;3;0;ajedrez;2
+AJDZ 3-4;1;2;0;ajedrez;2
+AJDZ F;1;1;0;ajedrez;2
+COREO1;1;1;0;coreografia;1
+COREO2;1;1;0;coreografia;1
+COREO3;1;1;0;coreografia;1
+COREO4;1;1;0;coreografia;1
+COREO5;1;1;0;coreografia;1
+COREO6;1;1;0;coreografia;1
+COREO7;1;1;0;coreografia;1
+COREO8;1;1;0;coreografia;1
+FUTEN 4tos1;1;4;0;futbol tenis;1
+FUTEN 4tos2;1;4;0;futbol tenis;1
+FUTEN 4tos3;1;4;0;futbol tenis;1
+FUTEN 4tos4;1;4;0;futbol tenis;1
+FUTEN semi1;1;3;0;futbol tenis;1
+FUTEN semi2;1;3;0;futbol tenis;1
+FUTEN 3-4;1;2;0;futbol tenis;1
+FUTEN F;1;1;0;futbol tenis;1
+LOL Fase 1 1 (1);1;11;0;lol;4
+LOL Fase 1 1 (2);1;11;0;lol;4
+LOL Fase 2 1;1;9;0;lol;4
+LOL 4tos 1;1;7;0;lol;4
+LOL Semi 1;1;5;0;lol;4
+LOL  Fase 1 2;1;10;0;lol;4
+LOL Fase 2 2;1;8;0;lol;4
+LOL Fase 3 2;1;6;0;lol;4
+LOL 4tos 2;1;4;0;lol;4
+LOL semi 2 ;1;3;0;lol;4
+LOL FG;1;1;0;lol;4
+LOL 3-4 ;1;2;0;lol;4
+FIFA Fase 1 1 (1);1;11;0;fifa;2
+FIFA Fase 1 1 (2);1;11;0;fifa;2
+FIFA Fase 1 1 (3);1;11;0;fifa;2
+FIFA Fase 1 1 (4);1;11;0;fifa;2
+FIFA Fase 2 1 (1);1;9;0;fifa;2
+FIFA Fase 2 1 (2);1;9;0;fifa;2
+FIFA 4tos 1;1;7;0;fifa;2
+FIFA Semi 1;1;5;0;fifa;2
+FIFA  Fase 1 2 (1);1;10;0;fifa;2
+FIFA  Fase 1 2 (2);1;10;0;fifa;2
+FIFA Fase 2 2 (1);1;8;0;fifa;2
+FIFA Fase 2 2 (2);1;8;0;fifa;2
+FIFA Fase 3 2 (1);1;6;0;fifa;2
+FIFA Fase 3 2 (2);1;6;0;fifa;2
+FIFA 4tos 2;1;4;0;fifa;2
+FIFA semi 2 ;1;3;0;fifa;2
+FIFA FG;1;1;0;fifa;2
+FIFA 3-4 ;1;2;0;fifa;2
+PKR grupo;1;2;0;poker;12
+PKR F;1;1;0;poker;12
+SSB Fase 1 1 (1);1;11;0;ssb;2
+SSB Fase 1 1 (2);1;11;0;ssb;2
+SSB Fase 1 1 (3);1;11;0;ssb;2
+SSB Fase 1 1 (4);1;11;0;ssb;2
+SSB Fase 2 1 (1);1;9;0;ssb;2
+SSB Fase 2 1 (2);1;9;0;ssb;2
+SSB 4tos 1;1;7;0;ssb;2
+SSB Semi 1;1;5;0;ssb;2
+SSB  Fase 1 2 (1);1;10;0;ssb;2
+SSB  Fase 1 2 (2);1;10;0;ssb;2
+SSB Fase 2 2 (1);1;8;0;ssb;2
+SSB Fase 2 2 (2);1;8;0;ssb;2
+SSB Fase 3 2 (3);1;6;0;ssb;2
+SSB Fase 3 2 (4);1;6;0;ssb;2
+SSB 4tos 2;1;4;0;ssb;2
+SSB semi 2 ;1;3;0;ssb;2
+SSB FG;1;1;0;ssb;2
+SSB 3-4 ;1;2;0;ssb;2
+DUD grupo;1;2;0;dudo;8
+DUD F;1;1;0;dudo;8
+TCA-V 4tos1;1;4;0;taca taca varones;1
+TCA-V 4tos2;1;4;0;taca taca varones;1
+TCA-V semi;1;3;0;taca taca varones;1
+TCA-V 7-8 y 5-6;1;2;0;taca taca varones;1
+TCA-V F y 3-4;1;1;0;taca taca varones;1
+TCA-D 4tos1;1;4;0;taca taca damas;1
+TCA-D 4tos2;1;4;0;taca taca damas;1
+TCA-D semi;1;3;0;taca taca damas;1
+TCA-D 7-8 y 5-6;1;2;0;taca taca damas;1
+TCA-D F y 3-4;1;1;0;taca taca damas;1
+TCA-MIX 4tos1;1;4;0;taca taca mixto;1
+TCA-MIX 4tos2;1;4;0;taca taca mixto;1
+TCA-MIX semi;1;3;0;taca taca mixto;1
+TCA-MIX 7-8 y 5-6;1;2;0;taca taca mixto;1
+TCA-MIX F y 3-4;1;1;0;taca taca mixto;1
+CACH Fase 1 1 (1);1;11;0;cachipun;1
+CACH Fase 1 1 (2);1;11;0;cachipun;1
+CACH Fase 2 1;1;9;0;cachipun;1
+CACH 4tos 1;1;7;0;cachipun;1
+CACH Semi 1;1;5;0;cachipun;1
+CACH  Fase 1 2;1;10;0;cachipun;1
+CACH Fase 2 2;1;8;0;cachipun;1
+CACH Fase 3 2;1;6;0;cachipun;1
+CACH 4tos 2;1;4;0;cachipun;1
+CACH semi 2 ;1;3;0;cachipun;1
+CACH FG;1;1;0;cachipun;1
+CACH 3-4 ;1;2;0;cachipun;1
+RAY grupo1;1;4;0;rayuela;1
+RAY grupo2;1;4;0;rayuela;1
+RAY grupo3;1;4;0;rayuela;1
+RAY grupo4;1;4;0;rayuela;1
+RAY grupo5;1;4;0;rayuela;1
+RAY grupo6;1;4;0;rayuela;1
+RAY semi1;1;3;0;rayuela;1
+RAY semi2;1;3;0;rayuela;1
+RAY 3-4;1;2;0;rayuela;1
+RAY F;1;1;0;rayuela;1

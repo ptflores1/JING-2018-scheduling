@@ -8,9 +8,12 @@ instancias = {1: "instancia", # 10 Eventos de futbol
               3: "instancia3.0", # Todos los eventos
               4: "instancia 4", # Todos los eventos en bloques de 5 min
               5: "instancia 5", # futbol 11 - tenis - natacion
-              6: "instancia 6"
+              6: "instancia 6", # voley v - futbol 11 - tenis - natacion
+              7: "instancia 7", # 47 periodos
+              8: "instancia 8", # 45 periodos
+              9: "instancia 9" # 44 periodos
               }
-instancia = instancias[6]
+instancia = instancias[9]
 
 PATH_EVENTOS = f"{instancia}/eventos.csv"
 PATH_DIAS = f"{instancia}/dias.csv"
@@ -186,7 +189,6 @@ model.setObjective(gamma, gurobipy.GRB.MINIMIZE)
 
 print("Optimizando csm depresion incoming")
 model.optimize()
-model.write("solucion.sol")
 model.printAttr("X")
 
 # CREACION DEL CALENDARIO
